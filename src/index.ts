@@ -17,7 +17,7 @@ import Logger from "./helpers/logger"
 class App {
 
     app:Application = express()
-    logger = Logger.getInstance("Index.ts")
+    logger = Logger.getInstance()
  
     constructor(){
         new EnvConfig()

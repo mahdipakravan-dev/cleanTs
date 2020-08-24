@@ -7,3 +7,9 @@
 ::ffff:127.0.0.1 - POST / HTTP/1.1 200 2 - 9.001 ms
 ::ffff:127.0.0.1 - POST / HTTP/1.1 200 14 - 7.901 ms
 ::1 - GET / HTTP/1.1 304 - - 0.535 ms
+::1 - GET / HTTP/1.1 - - - - ms
+::1 - GET / HTTP/1.1 - - - - ms
+::1 - GET / HTTP/1.1 - - - - ms
+::1 - GET / HTTP/1.1 - - - - ms
+::1 - GET / HTTP/1.1 - - - - ms
+::1 - GET / HTTP/1.1 - - - - ms

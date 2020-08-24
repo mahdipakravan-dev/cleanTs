@@ -1,4 +1,12 @@
 {
     "mongoConfig" : {"useNewUrlParser": true, "useUnifiedTopology": true} , 
-    "bodyParserConfig" : {"type" : "application/json"}
+    "bodyParserConfig" : {"type" : "application/json"} ,
+
+    "internalExceptionPage" : "/500" ,
+    "notFoundExceptionPage" : "/404" ,
+
+    "persianMessages" : {
+        "NotFound" : "404 یافت نشد" , 
+        "Internal" : "500 خطایی رخ داده است مجددا تلاش کنید"
+    }
 }

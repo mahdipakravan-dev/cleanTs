@@ -8,7 +8,7 @@ export default class Logger {
     static logger : winston.Logger ;
     constructor(){}
 
-    static getInstance(Instance : string){
+    static getInstance(){
         if(!Logger.logger){
             this.logger = winston.createLogger({
                 level: 'info',
