@@ -9,7 +9,7 @@ export default class ConnectMongo{
             .then(() => {
                 Logger.getInstance("ConnectMongo").log({
                     level : "info" , 
-                    message : "MongoDB Connected"
+                    message : `MongoDB Connected To [${process.env.MONGOHOST}]`
                 })
             })
             .catch(err => {

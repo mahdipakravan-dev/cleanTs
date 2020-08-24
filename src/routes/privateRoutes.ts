@@ -3,6 +3,6 @@ import HomeController from '../controllers/homeController'
 
 const Router = express.Router()
 
-Router.get('/' , HomeController.getHome)
+Router.all('/' , HomeController.getHome)
 
 export default Router

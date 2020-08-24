@@ -43,3 +43,31 @@
 {"level":"info","message":"MongoDB Connected","service":"Index.ts"}
 {"message":"Server Started","level":"info","service":"Index.ts"}
 {"level":"info","message":"MongoDB Connected","service":"Index.ts"}
+{"message":"Server Started","level":"info","service":"Index.ts"}
+{"level":"info","message":"MongoDB Connected","service":"Index.ts"}
+{"message":"Server Started","level":"info","service":"Index.ts"}
+{"level":"info","message":"MongoDB Connected","service":"Index.ts"}
+{"message":"Server Started","level":"info","service":"Index.ts"}
+{"level":"info","message":"MongoDB Connected","service":"Index.ts"}
+{"message":"Server Started","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started On localhost/4750","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started On localhost:4750","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To mongodb://localhost:27017/cleanTs"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}

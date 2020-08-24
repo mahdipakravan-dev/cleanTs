@@ -1,5 +1,6 @@
 import express , {Application} from "express"
 import config from 'config'
+import bodyParser from 'body-parser'
 
 import PrivateRoutes from './routes/privateRoutes'
 
@@ -19,7 +20,6 @@ class App {
     logger = Logger.getInstance("Index.ts")
  
     constructor(){
-        console.log("App Started ON : " + process.env.NODE_ENV + " Mode")
         new EnvConfig()
         new MongoConfig()
         new MorganConfig(this.app)
@@ -27,7 +27,7 @@ class App {
         this.configExpress()
         this.configRoutesAndLog()
         this.logger.log({
-            message : "Server Started" , 
+            message : `Server Started On ${process.env.HOST}:${process.env.PORT} [${process.env.NODE_ENV}]` , 
             level : "info"
         })
     }
@@ -37,7 +37,7 @@ class App {
     }
 
     private configExpress() : void{
-
+        this.app.use(bodyParser.json(config.get('bodyParserConfig')))
     }
 
     private configRoutesAndLog() : void{

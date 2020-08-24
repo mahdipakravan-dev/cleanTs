@@ -1,3 +1,4 @@
 {
-    "mongoConfig" : {"useNewUrlParser": true, "useUnifiedTopology": true}
+    "mongoConfig" : {"useNewUrlParser": true, "useUnifiedTopology": true} , 
+    "bodyParserConfig" : {"type" : "application/json"}
 }

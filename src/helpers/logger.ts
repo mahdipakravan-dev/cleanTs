@@ -13,7 +13,6 @@ export default class Logger {
             this.logger = winston.createLogger({
                 level: 'info',
                 format: winston.format.json(),
-                defaultMeta: { service: Instance },
                 transports: [
                   new winston.transports.Console({format: winston.format.simple()}),
                   new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
