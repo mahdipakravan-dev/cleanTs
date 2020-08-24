@@ -1,0 +1,28 @@
+{
+    "cSpell.words": [
+        "always",
+        "app",
+        "bridge",
+        "build",
+        "container",
+        "data",
+        "db",
+        "depends",
+        "driver",
+        "image",
+        "links",
+        "mongo",
+        "mongodb",
+        "name",
+        "network",
+        "networks",
+        "nodeapp",
+        "on",
+        "ports",
+        "restart",
+        "services",
+        "version",
+        "version services app container name networks nodeapp network depends on mongodb restart always build ports links image mongo volumes data db driver bridge",
+        "volumes"
+    ]
+}
