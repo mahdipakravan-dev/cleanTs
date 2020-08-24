@@ -1,13 +1,22 @@
 import mongoose from 'mongoose'
+import Logger from '../helpers/logger'
+
+import config from 'config'
 
 export default class ConnectMongo{
     constructor(){
-        mongoose.connect( 'mongodb://localhost:27017/funWithDocker' ,  {useNewUrlParser: true, useUnifiedTopology: true})
-            .then(result => {
-                console.log(`Mongodb Connected Success`)
+        mongoose.connect( <string>process.env.MONGOHOST , config.get('mongoConfig') )
+            .then(() => {
+                Logger.getInstance("ConnectMongo").log({
+                    level : "info" , 
+                    message : "MongoDB Connected"
+                })
             })
             .catch(err => {
-                console.log(`Error in Connect Mongodb` , err)
+                Logger.getInstance("ConnectMongo").log({
+                    level : "error" , 
+                    message : `Error in connect to mongodb ${err}`
+                })
             })
     }
 }
