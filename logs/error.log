@@ -1,1 +1,2 @@
 {"level":"error","message":"Server Started","service":"Index.ts"}
+{"level":"error","message":"Error in connect to mongodb MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017"}

@@ -155,3 +155,33 @@
 {"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
 {"message":"Server Started On localhost:4750 [development]","level":"info"}
 {"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"error","message":"Error in connect to mongodb MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [production]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}
+{"message":"Server Started On localhost:4750 [development]","level":"info"}
+{"level":"info","message":"MongoDB Connected To [mongodb://localhost:27017/cleanTs]"}

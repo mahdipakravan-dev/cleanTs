@@ -4,9 +4,9 @@ import bodyParser from 'body-parser'
 
 import PrivateRoutes from './routes/privateRoutes'
 
-import EnvConfig from './configuration/env'
-import MongoConfig from './configuration/mongo'
-import MorganConfig from './configuration/morgan'
+import EnvConfig from './configurations/env'
+import MongoConfig from './configurations/mongo'
+import MorganConfig from './configurations/morgan'
 import Logger from "./helpers/logger"
 
 /**
