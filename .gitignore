@@ -1,4 +1,7 @@
 node_modules
 build
+logs
+data
+.vscode
 
 rest.http
