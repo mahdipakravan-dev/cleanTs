@@ -1,11 +1,11 @@
-import {CatModel} from './Cat'
+import {CatModel as Cat} from '../models/Cat'
 import {InternalException} from '../helpers/Exception'
 
 export default class Util{
     private whole : any = {};
     constructor(){
         Object.assign(this.whole , {
-            CatModel
+            Cat
         })
     }
 
@@ -13,7 +13,7 @@ export default class Util{
         try {
             return await this.whole[collection].find(query)
         } catch (error) {
-            InternalException.Throw()
+            InternalException.Throw(error)
         }
     }
 
@@ -21,7 +21,15 @@ export default class Util{
         try {
             return await this.whole[collection].findOne(query)
         } catch (error) {
-            InternalException.Throw()
+            InternalException.Throw(error)
+        }
+    }
+
+    public async new(collection:string , data : {}){
+        try {
+            return await new this.whole[collection](data).save()
+        } catch (error) {
+            InternalException.Throw(error)
         }
     }
 

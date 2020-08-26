@@ -39,7 +39,7 @@ export class InternalException{
         res.json(InternalException.response)
     }
     
-    public static Throw(){
-        throw new Error(config.get("persianMessages.Internal"))
+    public static Throw(err : any){
+        throw new Error(err)
     }
 }
