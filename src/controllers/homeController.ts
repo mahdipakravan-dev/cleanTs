@@ -8,12 +8,11 @@ export default class HomeController {
             .find()
             .exec()
             .catch(err => {
-                // console.log("Error", err)
-                return next(err)
+                next(err)
             })
             .then(result => {
-                if (result) return res.send("Ok")
-                else return next("Undefined")
+                if (!result) return next("Not Found")
+                return res.send(result)
             })
     }
 
