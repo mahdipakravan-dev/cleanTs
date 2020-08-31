@@ -1,12 +1,11 @@
 import express = require('express')
-import HomeController from '../controllers/homeController'
+import authController from '../controllers/auth.controller'
 import validationMiddleware from '../middlewares/validation.md'
 import CreateCatDto from '../dto/createCat.dto'
-
-const homeController = new HomeController()
+import SignUpDto from '../dto/signup.dto'
 
 const Router = express.Router()
 
-Router.post("/", validationMiddleware(CreateCatDto), homeController.getHome)
+Router.post("/signUp", validationMiddleware(SignUpDto), authController.signUp)
 
 export default Router

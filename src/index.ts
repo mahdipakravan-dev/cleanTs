@@ -3,6 +3,7 @@ import config from 'config'
 import bodyParser from 'body-parser'
 
 import PrivateRoutes from './routes/privateRoutes'
+import PublicRoutes from './routes/publicRoutes'
 
 import EnvConfig from './configurations/env'
 import MongoConfig from './configurations/mongo'
@@ -28,10 +29,7 @@ class App {
         this.configServer()
         this.configExpress()
         this.configRoutesAndLog()
-        this.logger.log({
-            message: `Server Started On ${process.env.HOST}:${process.env.PORT} [${process.env.NODE_ENV}]`,
-            level: "info"
-        })
+        this.logger.info(`Server Started On ${process.env.HOST}:${process.env.PORT} [${process.env.NODE_ENV}]`)
     }
 
     private configServer(): void {
@@ -45,6 +43,7 @@ class App {
     private configRoutesAndLog(): void {
         this.app.use(IpDetector)
         this.app.use(PrivateRoutes)
+        this.app.use(PublicRoutes)
         this.app.use(ExceptionHandler)
     }
 

@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { CatModel } from "../models/Cat"
 import HttpException from "../helpers/Exception";
+import * as bcrypt from "bcrypt"
 
 export default class HomeController {
 
