@@ -43,9 +43,9 @@ class App {
     }
 
     private configRoutesAndLog(): void {
-        this.app.use(ExceptionHandler)
         this.app.use(IpDetector)
         this.app.use(PrivateRoutes)
+        this.app.use(ExceptionHandler)
     }
 
 
