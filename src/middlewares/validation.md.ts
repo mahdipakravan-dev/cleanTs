@@ -2,6 +2,7 @@ import { plainToClass } from 'class-transformer';
 import { validate, ValidationError } from 'class-validator';
 import * as express from 'express';
 import { Rest } from '../helpers/interfaces';
+import HttpException from '../helpers/Exception';
 
 function validationMiddleware<T>(type: any): express.RequestHandler {
     return (req, res, next) => {
@@ -10,14 +11,9 @@ function validationMiddleware<T>(type: any): express.RequestHandler {
                 if (errors.length > 0) {
                     let messages: any[] = []
                     errors.forEach((error: ValidationError) => {
-                        messages.push(Object.values(error.constraints || ""))
+                        messages.push(Object.values(error.constraints || "")[0])
                     })
-                    const Result: Rest = {
-                        status: 400,
-                        data: messages,
-                        message: "Validation Failed"
-                    }
-                    res.status(400).json(Result)
+                    next(new HttpException(400, "Validation Failed", messages))
                 } else {
                     next();
                 }

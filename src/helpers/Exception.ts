@@ -1,25 +1,10 @@
-import { Response } from "express";
-import config from 'config'
-import { Rest, statusCodes } from "./interfaces";
+import Logger from "./logger";
 
-export class ExceptionHandler {
-    static response: Rest
-
-    public static View(res: Response, error: string) {
-        res.render(config.get("ExceptionPage") , {error})
-    }
-
-    public static Api(res: Response, msg: string) {
-        ExceptionHandler.response = {
-            message: config.get(msg || "persianMessages.NotFound"),
-            status: statusCodes.NOT_FOUND,
-            data: []
-        }
-        res.json(ExceptionHandler.response)
-    }
-
-    public static Throw(msg:string) {
-        throw new Error(config.get(msg))
+class HttpException extends Error {
+    constructor(public status: number, public message: string, public data: any[] = [], public error: any = "") {
+        super(message);
+        error && Logger.getInstance().error(error)
     }
 }
 
+export default HttpException;
