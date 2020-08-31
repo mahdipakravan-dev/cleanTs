@@ -6,5 +6,7 @@ export interface Rest{
 
 export enum statusCodes {
     NOT_FOUND=404 ,
-    INTERNAL=500
+    INTERNAL=500 ,
+    SUCCESS=200 ,
+    CREATED=201
 }
