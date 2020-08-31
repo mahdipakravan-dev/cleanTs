@@ -1,11 +1,15 @@
-import mongoose , {Schema , Document} from 'mongoose'
+import mongoose, { Schema, Document } from 'mongoose'
 
-export interface ICat extends Document{
-    name :string
+export interface ICat extends Document {
+    name: string
 }
 
-const CatSchema:Schema = new Schema({
-    name : {type : String}
+const CatSchema: Schema = new Schema({
+    name: { type: String }
 })
 
-export const CatModel = mongoose.model<ICat>('cat' , CatSchema)
+CatSchema.pre("find", function (next) {
+    throw new Error("Test")
+})
+export const CatModel = mongoose.model<ICat>('cat', CatSchema)
+

@@ -1,45 +1,25 @@
 import { Response } from "express";
 import config from 'config'
-import { Rest , statusCodes } from "./interfaces";
+import { Rest, statusCodes } from "./interfaces";
 
-export class NotFoundException{
-    static response : Rest
-    
-    public static View(res:Response){
-        res.redirect(config.get("notFoundExceptionPage"))
+export class ExceptionHandler {
+    static response: Rest
+
+    public static View(res: Response, error: string) {
+        res.render(config.get("ExceptionPage") , {error})
     }
 
-    public static Api(res:Response){
-        NotFoundException.response = {
-            message : config.get("persianMessages.NotFound") ,
-            status : statusCodes.NOT_FOUND ,
-            data : []
+    public static Api(res: Response, msg: string) {
+        ExceptionHandler.response = {
+            message: config.get(msg || "persianMessages.NotFound"),
+            status: statusCodes.NOT_FOUND,
+            data: []
         }
-        res.json(NotFoundException.response)
+        res.json(ExceptionHandler.response)
     }
-    
-    public static Throw(){
-        throw new Error(config.get("persianMessages.NotFound"))
+
+    public static Throw(msg:string) {
+        throw new Error(config.get(msg))
     }
 }
 
-export class InternalException{
-    static response : Rest
-    
-    public static View(res:Response){
-        res.redirect(config.get("internalExceptionPage"))
-    }
-
-    public static Api(res:Response){
-        NotFoundException.response = {
-            message : config.get("persianMessages.Internal") ,
-            status : statusCodes.INTERNAL ,
-            data : []
-        }
-        res.json(InternalException.response)
-    }
-    
-    public static Throw(err : any){
-        throw new Error(err)
-    }
-}

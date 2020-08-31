@@ -1,13 +1,20 @@
-import { Request, Response } from "express";
-import Utility from '../helpers/Util'
+import { Request, Response, NextFunction } from "express";
+import { CatModel } from "../models/Cat"
 
-export default class HomeController{
-    
-    constructor(private readonly Util : Utility = new Utility()){}
+export default class HomeController {
 
-    public async getHome(req:Request , res:Response):Promise<void>{
-        const CarryCat = await this.Util.get("Cat")
-        res.json(req.body)
+    public async getHome(req: Request, res: Response, next: NextFunction): Promise<void> {
+        const CarryCat = await CatModel
+            .find()
+            .exec()
+            .catch(err => {
+                // console.log("Error", err)
+                return next(err)
+            })
+            .then(result => {
+                if (result) return res.send("Ok")
+                else return next("Undefined")
+            })
     }
 
 }

@@ -1,12 +1,16 @@
 {
-    "mongoConfig" : {"useNewUrlParser": true, "useUnifiedTopology": true} , 
-    "bodyParserConfig" : {"type" : "application/json"} ,
+    "mongoConfig": {
+        "useNewUrlParser": true,
+        "useUnifiedTopology": true
+    },
+    "bodyParserConfig": {
+        "type": "application/json"
+    },
 
-    "internalExceptionPage" : "/500" ,
-    "notFoundExceptionPage" : "/404" ,
+    "ExceptionPage": "/500",
 
-    "persianMessages" : {
-        "NotFound" : "404 یافت نشد" , 
-        "Internal" : "500 خطایی رخ داده است مجددا تلاش کنید"
+    "persianMessages": {
+        "NotFound": "404 یافت نشد",
+        "Internal": "500 خطایی رخ داده است مجددا تلاش کنید"
     }
 }
