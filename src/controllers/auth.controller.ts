@@ -1,13 +1,14 @@
 import { Request, Response, NextFunction } from 'express'
 import * as bcrypt from 'bcrypt'
+import { UserModel } from '../models/User'
+import config from 'config'
 
 export default new class authController {
     public async signUp(req: Request, res: Response, next: NextFunction) {
-        const password = "1234567"
-        const hashedPassword = await bcrypt.hash(password, 10)
-        const doPasswordMatch = await bcrypt.compare(password, hashedPassword)
+        const {Password , userName} = req.body
+        const hashedPassword = await bcrypt.hash(Password , config.get("passwordHash"))
 
-        console.log("Password Matching : ", doPasswordMatch)
+        // console.log("Password Matching : ", doPasswordMatch)
 
         res.send("See CMD")
     }

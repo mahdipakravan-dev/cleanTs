@@ -1,7 +1,6 @@
 import express = require('express')
 import authController from '../controllers/auth.controller'
 import validationMiddleware from '../middlewares/validation.md'
-import CreateCatDto from '../dto/createCat.dto'
 import SignUpDto from '../dto/signup.dto'
 
 const Router = express.Router()

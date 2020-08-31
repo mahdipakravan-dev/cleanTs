@@ -5,7 +5,4 @@ export default class SignUpDto {
 
     @IsString({ message: "password Field Must Be Not Null" })
     public password!: string;
-
-    @IsString({ message: "Repassword Field Must Be Not Null" })
-    public repassword!: string;
 }
