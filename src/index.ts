@@ -8,8 +8,8 @@ import EnvConfig from './configurations/env'
 import MongoConfig from './configurations/mongo'
 import MorganConfig from './configurations/morgan'
 import Logger from "./helpers/logger"
-import IpDetector from "./middlewares/ipDetector"
-import ExceptionHandler from "./middlewares/ExceptionHandler"
+import IpDetector from "./middlewares/ipDetector.md"
+import ExceptionHandler from "./middlewares/ExceptionHandler.md"
 
 /**
  * Repository Design Pattern
