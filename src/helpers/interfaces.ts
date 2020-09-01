@@ -1,10 +1,5 @@
-export interface Rest{
-    status : number
-    data : [] | {}
-    message : string
-}
-
 export enum statusCodes {
+    VALIDATION_ERROR=403,
     NOT_FOUND=404 ,
     CONFLICT=409,
     FORBIDDEN=403,

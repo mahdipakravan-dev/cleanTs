@@ -1,8 +1,8 @@
 import Logger from "./logger";
 
 class HttpException extends Error {
-    constructor(public status: number, public message: string, public data: any[] = [], public error: any = "") {
-        super(message);
+    constructor(public status: number , public error: any = "") {
+        super(error);
         error && Logger.getInstance().error(error)
     }
 }

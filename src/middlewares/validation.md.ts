@@ -1,8 +1,8 @@
 import { plainToClass } from 'class-transformer';
 import { validate, ValidationError } from 'class-validator';
 import * as express from 'express';
-import { Rest } from '../helpers/interfaces';
 import HttpException from '../helpers/Exception';
+import { statusCodes } from '../helpers/interfaces';
 
 function validationMiddleware<T>(type: any): express.RequestHandler {
     return (req, res, next) => {
@@ -13,7 +13,7 @@ function validationMiddleware<T>(type: any): express.RequestHandler {
                     errors.forEach((error: ValidationError) => {
                         messages.push(Object.values(error.constraints || "")[0])
                     })
-                    next(new HttpException(400, "Validation Failed", messages))
+                    next(new HttpException(statusCodes.VALIDATION_ERROR))
                 } else {
                     next();
                 }

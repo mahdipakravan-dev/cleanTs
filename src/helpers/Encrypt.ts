@@ -3,7 +3,7 @@ import { Token } from './interfaces'
 import config from 'config'
 import * as bcrypt from 'bcrypt'
 
-export default class Bcrypt {
+export default class Encrypt {
     static async Hash(password : string){
         return await bcrypt.hash(password, config.get("passwordHash"))
     }

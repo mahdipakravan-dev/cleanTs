@@ -1,9 +1,8 @@
-import { Rest } from "./interfaces";
 import { Response } from "express";
 
 class HttpResponse {
-    constructor(public res:Response , public rest:Rest) {
-        res.status(rest.status).json(rest)
+    constructor(public res:Response , public status:number , public rest : any) {
+        res.status(status).json(rest)
     }
 }
 
