@@ -1,4 +1,4 @@
-import { IsString, Min, Max, Length } from 'class-validator';
+import { IsString, Length } from 'class-validator';
 export default class SignUpDto {
     @IsString({ message: "UserName Field Must Be Not Null" })
     public username!: string;

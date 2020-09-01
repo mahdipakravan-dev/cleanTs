@@ -1,5 +1,4 @@
 import express , { Application } from "express";
-import path from 'path'
 
 export default class ViewConfig{
     constructor(private readonly app:Application){ 

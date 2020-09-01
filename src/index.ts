@@ -8,7 +8,7 @@ import PublicRoutes from './routes/publicRoutes'
 import EnvConfig from './configurations/env'
 import MongoConfig from './configurations/mongo'
 import MorganConfig from './configurations/morgan'
-import ViewConfig from './configurations/View'
+import ViewConfig from './configurations/view'
 import Logger from "./helpers/logger"
 import IpDetector from "./middlewares/ipDetector.md"
 import ExceptionHandler from "./middlewares/ExceptionHandler.md"

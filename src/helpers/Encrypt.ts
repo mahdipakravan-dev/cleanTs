@@ -1,5 +1,3 @@
-import * as jwt from 'jsonwebtoken'
-import { Token } from './interfaces'
 import config from 'config'
 import * as bcrypt from 'bcrypt'
 
