@@ -7,6 +7,6 @@ import SignInDto from '../dto/signIn.dto'
 const Router = express.Router()
 
 Router.post("/signUp", validationMiddleware(SignUpDto), authController.signUp)
-// Router.post("/signIn", validationMiddleware(SignInDto) , authController.signIn)
+Router.post("/signIn", validationMiddleware(SignInDto) , authController.signIn)
 
 export default Router

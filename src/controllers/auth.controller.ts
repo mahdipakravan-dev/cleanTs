@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 import * as bcrypt from 'bcrypt'
-import { UserModel, userInterface } from '../models/User'
+import { UserModel, userInterface, IUser } from '../models/User'
 import config from 'config'
 import HttpException from '../helpers/Exception'
 import { statusCodes } from '../helpers/interfaces'
@@ -29,20 +29,24 @@ export default new class authController {
             })
     }
 
-    // public async signIn(req: Request, res: Response, next: NextFunction) {
-    //     const { username, password } = req.body
-    //     let user = await UserModel.findOne({ username });
-    //     if (!user) return next(new HttpException(statusCodes.NOT_FOUND, "Username or password inCorrect"))
-    //     bcrypt.compare(password, user.password)
-    //         .then(result => {
-    //             result
-    //                 ? new HttpResponse(res, { token: "" })
-    //                 : next(new HttpException(statusCodes.NOT_ACCEPTABLE, "Username or password inCorrect"))
-
-    //         })
-    //         .catch(() => {
-    //             next(new HttpException(statusCodes.INTERNAL, "Something Wrong Try Again Later"))
-    //         })
-    // }
+    public async signIn(req: Request, res: Response, next: NextFunction) {
+        const { username, password } = req.body
+        await UserModel.findOne({ username })
+            .then(user => {
+                if(!user) return next(new HttpException(statusCodes.NOT_FOUND))
+                Encrypt.Compare(password , user.password)
+                .then((result) => {
+                    result 
+                        ? new HttpResponse(res , statusCodes.SUCCESS , { token: Jwt.getToken({userId : user?._id})})
+                        : next(new HttpException(statusCodes.NOT_FOUND))
+                })
+                .catch((err) => {
+                    next(new HttpException(statusCodes.INTERNAL , err))
+                })
+            })
+            .catch(err => {
+                next(new HttpException(statusCodes.NOT_FOUND))
+            })
+    }
 
 }

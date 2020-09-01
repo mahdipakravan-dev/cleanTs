@@ -6,9 +6,10 @@ import config from "config"
 
 export interface userInterface {
     username: string,
-    password: string
+    password: string,
+    _id?:string
 }
-interface IUser extends Document {
+export interface IUser extends Document {
     username: string,
     password: string ,
 
