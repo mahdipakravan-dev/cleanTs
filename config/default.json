@@ -8,6 +8,7 @@
     },
 
     "passwordHash" : 10 , 
+    "jwtSign" : "ERXwuv$T$Ms4m*73vFUh*?_j-5bf_3&XspgFDGLWvJPD%SaQhJ" ,
 
     "ExceptionPage": "/500",
 
