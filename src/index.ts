@@ -8,6 +8,7 @@ import PublicRoutes from './routes/publicRoutes'
 import EnvConfig from './configurations/env'
 import MongoConfig from './configurations/mongo'
 import MorganConfig from './configurations/morgan'
+import ViewConfig from './configurations/View'
 import Logger from "./helpers/logger"
 import IpDetector from "./middlewares/ipDetector.md"
 import ExceptionHandler from "./middlewares/ExceptionHandler.md"
@@ -26,6 +27,7 @@ class App {
         new EnvConfig()
         new MongoConfig()
         new MorganConfig(this.app)
+        new ViewConfig(this.app)
         this.configServer()
         this.configExpress()
         this.configRoutesAndLog()

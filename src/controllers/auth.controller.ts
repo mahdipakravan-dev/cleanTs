@@ -1,15 +1,10 @@
 import { Request, Response, NextFunction } from 'express'
-import * as bcrypt from 'bcrypt'
-import { UserModel, userInterface, IUser } from '../models/User'
-import config from 'config'
+import { UserModel } from '../models/User'
 import HttpException from '../helpers/Exception'
 import { statusCodes } from '../helpers/interfaces'
 import HttpResponse from '../helpers/Response'
 import Jwt from '../helpers/jwt'
 import Encrypt from '../helpers/Encrypt'
-
-import messages from '../helpers/messages'
-
 
 export default new class authController {
 
