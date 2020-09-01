@@ -4,9 +4,15 @@ import { NextFunction } from 'express'
 import * as bcrypt from 'bcrypt'
 import config from "config"
 
-interface IUser extends Document {
+export interface userInterface {
     username: string,
     password: string
+}
+interface IUser extends Document {
+    username: string,
+    password: string ,
+
+    CreateUser(user:userInterface):Promise<any>
 }
 
 const UserSchema: Schema = new Schema({
@@ -14,12 +20,16 @@ const UserSchema: Schema = new Schema({
     password: String
 })
 
-UserSchema.methods.comparePass = async function (password: string, hash: string): Promise<boolean> {
-    return await bcrypt.compare(password, hash)
-}
-
-UserSchema.statics.HashPass = async function HashPass(pass: string) {
-    return await bcrypt.hash(pass, config.get("passwordHash"))
+UserSchema.methods.CreateUser = function(user:userInterface){
+    return new Promise((resolve , reject) => {
+        new UserModel({username : user.username , password : user.password}).save()
+        .then(result => {
+            resolve(result)
+        })
+        .catch(err => {
+            reject(err)
+        })
+    })
 }
 
 export const UserModel = mongoose.model<IUser>('username', UserSchema)
