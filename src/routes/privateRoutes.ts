@@ -1,7 +1,12 @@
 import express = require('express')
+import AuthHandler from '../middlewares/Auth.md'
 
 const Router = express.Router()
 
-// Router.post("/", validationMiddleware(CreateCatDto), homeController.getHome)
+Router.use(AuthHandler)
+
+Router.get("/testAuth", (req, res) => {
+    res.send("Controller")
+})
 
 export default Router
