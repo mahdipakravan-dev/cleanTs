@@ -1,6 +1,9 @@
 import express, { Application } from "express"
 import config from 'config'
 import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import session from 'express-session'
+import flash from 'express-flash'
 
 import PrivateRoutes from './routes/privateRoutes'
 import PublicRoutes from './routes/publicRoutes'
@@ -14,9 +17,9 @@ import IpDetector from "./middlewares/ipDetector.md"
 import ExceptionHandler from "./middlewares/ExceptionHandler.md"
 
 /**
- * Repository Design Pattern
- * Single Responsibility Principle
- */
+  * Repository Design Pattern                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+  * Single Responsibility Principle
+*/
 
 class App {
 
@@ -40,6 +43,14 @@ class App {
 
     private configExpress(): void {
         this.app.use(bodyParser.json(config.get('bodyParserConfig')))
+        this.app.use(session({
+            secret: config.get("session_secret"),
+            saveUninitialized: true,
+            resave : true ,
+            cookie: { maxAge: 3600000 }
+        }))
+        this.app.use(cookieParser(config.get("cookie_secret")))
+        this.app.use(flash())
     }
 
     private configRoutesAndLog(): void {
